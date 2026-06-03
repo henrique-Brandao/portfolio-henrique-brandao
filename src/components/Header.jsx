@@ -11,7 +11,7 @@ function Header() {
     <header className="site-header">
       <nav className="container nav" aria-label="Navegação principal">
         <a className="brand" href="#top" aria-label="Henrique Brandão - início">
-          HB
+          Henrique Brandão
         </a>
         <div className="nav-links">
           {navItems.map((item) => (

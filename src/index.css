@@ -79,15 +79,14 @@ li + li {
 }
 
 .brand {
-  width: 42px;
-  height: 42px;
-  display: inline-grid;
-  place-items: center;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--surface);
-  color: var(--accent);
+  color: var(--text);
   font-weight: 800;
+  transition: color 160ms ease;
+}
+
+.brand:hover,
+.brand:focus-visible {
+  color: var(--accent);
 }
 
 .nav-links {
