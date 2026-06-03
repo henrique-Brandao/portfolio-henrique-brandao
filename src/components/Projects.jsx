@@ -3,7 +3,7 @@ import { projects } from '../data/projects.js';
 
 function ProjectCard({ project }) {
   return (
-    <article className={`project-card ${project.featured ? 'featured' : ''}`}>
+    <article className={`project-card ${project.featured ? 'featured' : ''} ${project.wide ? 'wide' : ''}`}>
       <div className="project-preview" aria-label={`Preview visual do ${project.name}`}>
         {project.image ? (
           <img src={project.image} alt={project.imageAlt} loading="lazy" />

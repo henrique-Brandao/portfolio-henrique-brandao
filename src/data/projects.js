@@ -4,7 +4,7 @@ export const projects = [
     featured: true,
     repo: 'https://github.com/henrique-Brandao/taskflow',
     deploy: 'https://taskflow-henrique.vercel.app/',
-    image: '/imagemDashboard.png',
+    image: '/imagemDashboard.jpg',
     imageAlt: 'Placeholder do dashboard do TaskFlow para substituir por uma captura real',
     summary:
       'Aplicação full-stack de gerenciamento de tarefas com frontend em React, API REST em Spring Boot, autenticação JWT e persistência em PostgreSQL.',
@@ -41,8 +41,11 @@ export const projects = [
   },
   {
     name: 'MagicFridgeAI',
+    wide: true,
     repo: 'https://github.com/henrique-Brandao/MagicFridgeAi',
     status: 'Sem deploy público',
+    image: '/imagemMagicFridge.png',
+    imageAlt: 'Placeholder da interface do MagicFridgeAI para substituir por uma captura real',
     summary:
       'Projeto com backend Java/Spring Boot para cadastrar ingredientes e gerar sugestão de receita com a API da OpenAI, acompanhado de um frontend demonstrativo.',
     preview: {
