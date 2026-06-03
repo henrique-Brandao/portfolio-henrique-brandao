@@ -1,26 +1,60 @@
-import { ArrowUpRight } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import { projects } from '../data/projects.js';
 
 function ProjectCard({ project }) {
   return (
     <article className={`project-card ${project.featured ? 'featured' : ''}`}>
+      <div className="project-preview" aria-label={`Preview visual do ${project.name}`}>
+        {project.image ? (
+          <img src={project.image} alt={project.imageAlt} loading="lazy" />
+        ) : (
+          <div className="preview-window">
+            <div className="preview-topbar">
+              <span />
+              <span />
+              <span />
+            </div>
+            <div className="preview-content">
+              <div>
+                <strong>{project.preview.title}</strong>
+                <small>{project.preview.subtitle}</small>
+              </div>
+              <div className="preview-stats">
+                {project.preview.stats.map((stat) => (
+                  <span key={stat}>{stat}</span>
+                ))}
+              </div>
+              <div className="preview-rows">
+                {project.preview.rows.map((row) => (
+                  <span key={row}>{row}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
       <div className="project-card-header">
         <div>
           {project.featured && <span className="tag">Projeto principal</span>}
           <h3>{project.name}</h3>
         </div>
-        <a
-          className="icon-link"
-          href={project.repo}
-          target="_blank"
-          rel="noreferrer"
-          aria-label={`Abrir repositório do ${project.name}`}
-        >
-          <ArrowUpRight size={20} aria-hidden="true" />
-        </a>
       </div>
 
       <p className="project-summary">{project.summary}</p>
+
+      <div className="project-actions" aria-label={`Links do ${project.name}`}>
+        {project.deploy && (
+          <a className="button primary" href={project.deploy} target="_blank" rel="noreferrer">
+            <ExternalLink size={18} aria-hidden="true" />
+            Ver site
+          </a>
+        )}
+        <a className="button" href={project.repo} target="_blank" rel="noreferrer">
+          <Github size={18} aria-hidden="true" />
+          GitHub
+        </a>
+      </div>
 
       <div className="project-block">
         <h4>Funcionalidades reais</h4>
@@ -58,8 +92,8 @@ function Projects() {
           <p className="eyebrow">Projetos</p>
           <h2 id="projects-title">Projetos técnicos de estudo e portfólio</h2>
           <p>
-            Cards escritos a partir dos READMEs dos repositórios, com foco no que
-            foi implementado e estudado em cada projeto.
+            Projetos com backend como ponto principal, mas mostrando também a
+            integração com interfaces web quando isso existe no repositório.
           </p>
         </div>
         <div className="projects-grid">

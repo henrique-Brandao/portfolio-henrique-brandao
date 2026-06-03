@@ -290,7 +290,7 @@ h4 {
   gap: 18px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 24px;
+  padding: 18px;
   background: var(--surface);
 }
 
@@ -323,31 +323,119 @@ h4 {
   font-weight: 800;
 }
 
-.icon-link {
-  flex: 0 0 auto;
-  width: 40px;
-  height: 40px;
-  display: inline-grid;
-  place-items: center;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  color: var(--accent);
-  transition:
-    border-color 160ms ease,
-    background 160ms ease;
-}
-
-.icon-link:hover,
-.icon-link:focus-visible {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-}
-
 .project-summary,
 .project-block p,
 .project-card li,
 .project-note {
   color: var(--muted);
+}
+
+.project-preview {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(79, 209, 165, 0.2), rgba(102, 166, 255, 0.12)),
+    #0b0f15;
+  padding: 14px;
+}
+
+.project-preview img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+}
+
+.preview-window {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(14, 17, 22, 0.92);
+  min-height: 220px;
+}
+
+.preview-topbar {
+  display: flex;
+  gap: 6px;
+  border-bottom: 1px solid var(--line);
+  padding: 10px;
+}
+
+.preview-topbar span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--subtle);
+}
+
+.preview-content {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+}
+
+.preview-content strong,
+.preview-content small {
+  display: block;
+}
+
+.preview-content strong {
+  font-size: 1.3rem;
+}
+
+.preview-content small {
+  color: var(--muted);
+}
+
+.preview-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.preview-stats span,
+.preview-rows span {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.preview-stats span {
+  min-height: 54px;
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.preview-rows {
+  display: grid;
+  gap: 8px;
+}
+
+.preview-rows span {
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-actions .button {
+  flex: 1 1 150px;
 }
 
 .project-block {

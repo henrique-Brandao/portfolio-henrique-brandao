@@ -65,10 +65,9 @@ src/
 
 ## Pontos para editar
 
-- Substituir o placeholder do LinkedIn em `src/components/Hero.jsx` e `src/components/Contact.jsx`.
-- Substituir o email placeholder em `src/components/Hero.jsx` e `src/components/Contact.jsx`.
 - Detalhar certificados, cargas horarias e links na secao de cursos em `src/components/Education.jsx`.
 - Revisar `src/data/projects.js` quando os projetos evoluirem, principalmente tecnologias, deploys e novas funcionalidades.
+- Atualizar previews ou screenshots dos projetos quando houver novas telas.
 
 ## Criar repositorio no GitHub manualmente
 

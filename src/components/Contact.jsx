@@ -9,14 +9,14 @@ const contactLinks = [
   },
   {
     label: 'LinkedIn',
-    value: 'Substituir pelo link do LinkedIn',
-    href: 'https://www.linkedin.com/in/seu-linkedin',
+    value: 'linkedin.com/in/brandaohenrique',
+    href: 'https://www.linkedin.com/in/brandaohenrique/',
     icon: Linkedin
   },
   {
     label: 'Email',
-    value: 'Substituir pelo email profissional',
-    href: 'mailto:seuemail@email.com',
+    value: 'henriquebrandao.dev@gmail.com',
+    href: 'mailto:henriquebrandao.dev@gmail.com',
     icon: Mail
   }
 ];
@@ -30,8 +30,8 @@ function Contact() {
           <h2 id="contact-title">Aberto a estágio ou vaga júnior</h2>
           <p>
             Estou buscando uma primeira oportunidade para aplicar e evoluir meus
-            estudos em backend, especialmente com Java, Spring Boot, APIs REST,
-            banco de dados e desenvolvimento web.
+            estudos em desenvolvimento web, especialmente com Java, Spring Boot,
+            APIs REST, banco de dados e integração com front-end.
           </p>
         </div>
         <div className="contact-list">
