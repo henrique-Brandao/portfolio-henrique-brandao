@@ -15,16 +15,15 @@ function Education() {
           <article>
             <span>Em andamento</span>
             <h3>Engenharia de Software</h3>
-            <p>Graduação em andamento</p>
+            <p>Cruzeiro do Sul</p>
           </article>
         </div>
         <div className="course-box">
           <h3>Certificações e cursos</h3>
           <ul>
             <li>Ford Enter — Front-end e Back-end</li>
-            <li>Alura — Java, Spring Boot, Git, Docker ou SQL</li>
+            <li>Alura — Java, Spring Boot, Git, Docker, SQL e desenvolvimento web</li>
           </ul>
-          <p>Estrutura preparada para detalhar certificados, cargas horárias e links depois.</p>
         </div>
       </div>
     </section>

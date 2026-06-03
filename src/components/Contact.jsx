@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { FileText, Github, Linkedin, Mail } from 'lucide-react';
 
 const contactLinks = [
   {
@@ -18,6 +18,12 @@ const contactLinks = [
     value: 'henriquebrandao.dev@gmail.com',
     href: 'mailto:henriquebrandao.dev@gmail.com',
     icon: Mail
+  },
+  {
+    label: 'Currículo',
+    value: 'curriculo-henrique-brandao.pdf',
+    href: '/curriculo-henrique-brandao.pdf',
+    icon: FileText
   }
 ];
 

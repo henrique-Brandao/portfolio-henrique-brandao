@@ -37,6 +37,7 @@ function ProjectCard({ project }) {
       <div className="project-card-header">
         <div>
           {project.featured && <span className="tag">Projeto principal</span>}
+          {project.status && <span className="tag muted-tag">{project.status}</span>}
           <h3>{project.name}</h3>
         </div>
       </div>
@@ -92,8 +93,8 @@ function Projects() {
           <p className="eyebrow">Projetos</p>
           <h2 id="projects-title">Projetos técnicos de estudo e portfólio</h2>
           <p>
-            Projetos com backend como ponto principal, mas mostrando também a
-            integração com interfaces web quando isso existe no repositório.
+            Projetos Java/Spring com backend como ponto principal e integração
+            com interfaces web quando isso faz parte do repositório.
           </p>
         </div>
         <div className="projects-grid">

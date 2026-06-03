@@ -8,11 +8,11 @@ function About() {
         </div>
         <div className="text-stack">
           <p>
-            Sou estudante de Desenvolvimento de Sistemas no SENAI CIMATEC e
-            graduando em Engenharia de Software. Estou direcionando meus estudos
-            para backend com Java e Spring Boot, com atenção a APIs REST,
-            persistência em banco relacional, autenticação, Docker e boas
-            práticas de organização de código.
+            Sou estudante do curso técnico em Desenvolvimento de Sistemas no
+            SENAI CIMATEC e graduando em Engenharia de Software pela Cruzeiro do
+            Sul. Estou direcionando meus estudos para backend com Java e Spring
+            Boot, com atenção a APIs REST, persistência em banco relacional,
+            autenticação, Docker e boas práticas de organização de código.
           </p>
           <p>
             Meus projetos são de estudo e portfólio, criados para consolidar

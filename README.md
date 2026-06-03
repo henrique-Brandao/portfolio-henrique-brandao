@@ -5,7 +5,6 @@ Portfolio pessoal de Henrique Brandao, desenvolvedor backend Java em formacao.
 O site foi criado com React + Vite e apresenta perfil, projetos, skills, formacao, cursos e contato. Os textos dos projetos foram escritos com base nos READMEs dos repositorios:
 
 - TaskFlow: https://github.com/henrique-Brandao/taskflow
-- Sprint3 API Gestao Escolar: https://github.com/henrique-Brandao/sprint3-api-gestao-escolar
 - MagicFridgeAI: https://github.com/henrique-Brandao/MagicFridgeAi
 
 ## Tecnologias
@@ -68,6 +67,7 @@ src/
 - Detalhar certificados, cargas horarias e links na secao de cursos em `src/components/Education.jsx`.
 - Revisar `src/data/projects.js` quando os projetos evoluirem, principalmente tecnologias, deploys e novas funcionalidades.
 - Atualizar previews ou screenshots dos projetos quando houver novas telas.
+- Para habilitar o botao de curriculo, coloque seu PDF em `public/curriculo-henrique-brandao.pdf`.
 
 ## Criar repositorio no GitHub manualmente
 

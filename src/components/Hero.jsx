@@ -1,16 +1,16 @@
-import { Github, Linkedin, Mail, FolderKanban } from 'lucide-react';
+import { FileText, FolderKanban, Github, Linkedin, Mail } from 'lucide-react';
 
 function Hero() {
   return (
     <section className="hero section" id="top" aria-labelledby="hero-title">
       <div className="container hero-grid">
         <div className="hero-content">
-          <p className="eyebrow">Portfólio Java / Full stack</p>
+          <p className="eyebrow">Portfólio Backend Java</p>
           <h1 id="hero-title">Henrique Brandão</h1>
-          <p className="hero-title">Desenvolvedor Java com foco em Back end</p>
+          <p className="hero-title">Desenvolvedor Backend Java</p>
           <p className="hero-text">
             Construindo APIs REST, integrações e aplicações web com Java, Spring
-            Boot, React, PostgreSQL e Docker.
+            Boot, PostgreSQL, Docker e React.
           </p>
           <div className="hero-actions" aria-label="Links principais">
             <a className="button primary" href="https://github.com/henrique-Brandao" target="_blank" rel="noreferrer">
@@ -25,6 +25,10 @@ function Hero() {
               <FolderKanban size={18} aria-hidden="true" />
               Projetos
             </a>
+            <a className="button" href="/curriculo-henrique-brandao.pdf" target="_blank" rel="noreferrer">
+              <FileText size={18} aria-hidden="true" />
+              Currículo
+            </a>
             <a className="button" href="mailto:henriquebrandao.dev@gmail.com">
               <Mail size={18} aria-hidden="true" />
               Contato
@@ -34,11 +38,11 @@ function Hero() {
         <aside className="hero-panel" aria-label="Resumo técnico">
           <div>
             <span className="panel-label">Foco atual</span>
-            <strong>Back end Java/Spring Boot, com base full stack</strong>
+            <strong>Backend Java/Spring Boot</strong>
           </div>
           <div>
             <span className="panel-label">Estudando</span>
-            <strong>APIs REST, autenticação, banco de dados, Docker e React</strong>
+            <strong>Docker, Testes automatizados, CI/CD, Cache e Redis</strong>
           </div>
           <div>
             <span className="panel-label">Objetivo</span>

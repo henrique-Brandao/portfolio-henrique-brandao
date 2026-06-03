@@ -6,7 +6,7 @@ function Skills() {
       <div className="container">
         <div className="section-heading">
           <p className="eyebrow">Skills</p>
-          <h2 id="skills-title">Habilidades organizadas por área</h2>
+          <h2 id="skills-title">Habilidades</h2>
         </div>
         <div className="skills-grid">
           {skillGroups.map((group) => (

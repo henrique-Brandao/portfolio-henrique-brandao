@@ -37,48 +37,12 @@ export const projects = [
       'Docker'
     ],
     learning:
-      'Construí uma API REST em camadas, trabalhei com DTOs, mappers, autenticação stateless, proteção de recursos por usuário, CORS, integração React/API e primeiros passos com Docker em backend Spring Boot.',
-    note:
-      'O README informa que a parte de Docker pode evoluir com Docker Compose para backend, PostgreSQL e frontend.'
-  },
-  {
-    name: 'Sprint3 - Portal Escolar',
-    repo: 'https://github.com/henrique-Brandao/sprint3-api-gestao-escolar',
-    summary:
-      'Projeto acadêmico de gestão escolar com API REST em ASP.NET Core e uma interface web simples em wwwroot para consumir a API localmente.',
-    preview: {
-      title: 'Portal Escolar',
-      subtitle: 'Perfis, matrículas e notas',
-      stats: ['Aluno', 'Professor', 'Diretor'],
-      rows: ['Controle por roles', 'Solicitações de acesso', 'Notas e matrículas']
-    },
-    features: [
-      'Login com email e senha retornando token JWT.',
-      'CRUD de alunos, professores, diretores, disciplinas, matrículas, notas e usuários.',
-      'Controle de acesso por roles: Admin, Diretor, Professor e Aluno.',
-      'Solicitações públicas de acesso para Aluno e Professor, com aprovação ou recusa por Admin/Diretor.',
-      'Swagger/OpenAPI em desenvolvimento e testes iniciais com xUnit.'
-    ],
-    technologies: [
-      'C#',
-      'ASP.NET Core Web API',
-      '.NET 10',
-      'Entity Framework Core',
-      'MySQL',
-      'JWT Bearer Authentication',
-      'Swagger/OpenAPI',
-      'HTML',
-      'CSS',
-      'JavaScript',
-      'Bootstrap',
-      'xUnit'
-    ],
-    learning:
-      'Usei o projeto para estudar fundamentos de backend em outra stack e comparar conceitos com Java/Spring Boot, como controllers, services, repositories, DTOs, ORM, migrations, autenticação e autorização.'
+      'Construí uma API REST em camadas, trabalhei com DTOs, mappers, autenticação stateless, autorização por usuário autenticado, proteção de recursos, tratamento global de exceções, CORS, integração React/API, migrations e primeiros passos com Docker em backend Spring Boot.'
   },
   {
     name: 'MagicFridgeAI',
     repo: 'https://github.com/henrique-Brandao/MagicFridgeAi',
+    status: 'Sem deploy público',
     summary:
       'Projeto com backend Java/Spring Boot para cadastrar ingredientes e gerar sugestão de receita com a API da OpenAI, acompanhado de um frontend demonstrativo.',
     preview: {
@@ -112,8 +76,6 @@ export const projects = [
       'Tailwind CSS'
     ],
     learning:
-      'Desenvolvi o backend em camadas, integrei uma API externa com WebClient, modelei DTOs e validações, usei Flyway/PostgreSQL e separei o backend real de um frontend apenas demonstrativo.',
-    note:
-      'O README informa que o backend foi desenvolvido por mim, que o frontend foi gerado com IA como interface de demonstração e que o projeto não possui autenticação ou autorização implementada.'
+      'Desenvolvi o backend em camadas, integrei uma API externa com WebClient, modelei DTOs e validações, usei Flyway/PostgreSQL e separei o backend real de um frontend apenas demonstrativo.'
   }
 ];
