@@ -130,8 +130,9 @@ const resources = {
   }
 };
 
+const savedLang = localStorage.getItem('portfolio_lang');
 const userLang = navigator.language || navigator.userLanguage;
-const defaultLang = userLang.startsWith('it') ? 'it' : (userLang.startsWith('pt') ? 'pt' : 'en');
+const defaultLang = savedLang || (userLang.startsWith('it') ? 'it' : (userLang.startsWith('pt') ? 'pt' : 'en'));
 
 i18n
   .use(initReactI18next)
@@ -143,5 +144,9 @@ i18n
       escapeValue: false 
     }
   });
+
+i18n.on('languageChanged', (lng) => {
+  localStorage.setItem('portfolio_lang', lng);
+});
 
 export default i18n;
