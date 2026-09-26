@@ -1,56 +1,71 @@
-import { FileText, Github, Linkedin, Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Mail, Linkedin, Github, FileText } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const contactLinks = [
   {
-    label: 'GitHub',
-    value: 'github.com/henrique-Brandao',
-    href: 'https://github.com/henrique-Brandao',
-    icon: Github
-  },
-  {
-    label: 'LinkedIn',
-    value: 'linkedin.com/in/brandaohenrique',
-    href: 'https://www.linkedin.com/in/brandaohenrique/',
-    icon: Linkedin
-  },
-  {
-    label: 'Email',
+    label: 'E-mail',
     value: 'henriquebrandao.dev@gmail.com',
     href: 'mailto:henriquebrandao.dev@gmail.com',
     icon: Mail
   },
   {
+    label: 'LinkedIn',
+    value: 'in/henrique-brandao',
+    href: 'https://linkedin.com/in/henrique-brandao',
+    icon: Linkedin
+  },
+  {
+    label: 'GitHub',
+    value: 'henrique-Brandao',
+    href: 'https://github.com/henrique-Brandao',
+    icon: Github
+  },
+  {
     label: 'Currículo',
-    value: 'curriculo-henrique-brandao.pdf',
+    value: 'Download (PDF)',
     href: '/curriculo-henrique-brandao.pdf',
     icon: FileText
   }
 ];
 
 function Contact() {
+  const { t } = useTranslation();
+
   return (
-    <section className="section alt-section" id="contato" aria-labelledby="contact-title">
+    <section className="section" id="contato" aria-labelledby="contact-title">
       <div className="container contact-layout">
-        <div>
-          <p className="eyebrow">Contato</p>
-          <h2 id="contact-title">Aberto a estágio ou vaga júnior</h2>
-          <p>
-            Estou buscando uma primeira oportunidade para aplicar e evoluir meus
-            estudos em desenvolvimento web, especialmente com Java, Spring Boot,
-            APIs REST, banco de dados e integração com front-end.
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="eyebrow">{t('contact_eyebrow')}</p>
+          <h2 id="contact-title">{t('contact_title')}</h2>
+          <p style={{ marginTop: '16px' }}>
+            {t('contact_p')}
           </p>
-        </div>
-        <div className="contact-list">
+        </motion.div>
+        <motion.div 
+          className="contact-list"
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           {contactLinks.map(({ label, value, href, icon: Icon }) => (
-            <a key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noreferrer">
+            <a key={label} href={href} target={href.startsWith('http') || href.endsWith('.pdf') ? '_blank' : undefined} rel="noreferrer">
               <Icon size={20} aria-hidden="true" />
               <span>
-                <strong>{label}</strong>
-                {value}
+                <strong style={{ display: 'block', color: 'var(--text)' }}>
+                  {label === 'Currículo' ? t('nav_cv') : label}
+                </strong>
+                <span style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>{value}</span>
               </span>
             </a>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

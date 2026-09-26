@@ -1,106 +1,77 @@
+import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
-import { projects } from '../data/projects.js';
-
-function ProjectCard({ project }) {
-  return (
-    <article className={`project-card ${project.featured ? 'featured' : ''} ${project.wide ? 'wide' : ''}`}>
-      <div className="project-preview" aria-label={`Preview visual do ${project.name}`}>
-        {project.image ? (
-          <img src={project.image} alt={project.imageAlt} loading="lazy" />
-        ) : (
-          <div className="preview-window">
-            <div className="preview-topbar">
-              <span />
-              <span />
-              <span />
-            </div>
-            <div className="preview-content">
-              <div>
-                <strong>{project.preview.title}</strong>
-                <small>{project.preview.subtitle}</small>
-              </div>
-              <div className="preview-stats">
-                {project.preview.stats.map((stat) => (
-                  <span key={stat}>{stat}</span>
-                ))}
-              </div>
-              <div className="preview-rows">
-                {project.preview.rows.map((row) => (
-                  <span key={row}>{row}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-
-      <div className="project-card-header">
-        <div>
-          {project.featured && <span className="tag">Projeto principal</span>}
-          {project.status && <span className="tag muted-tag">{project.status}</span>}
-          <h3>{project.name}</h3>
-        </div>
-      </div>
-
-      <p className="project-summary">{project.summary}</p>
-
-      <div className="project-actions" aria-label={`Links do ${project.name}`}>
-        {project.deploy && (
-          <a className="button primary" href={project.deploy} target="_blank" rel="noreferrer">
-            <ExternalLink size={18} aria-hidden="true" />
-            Ver site
-          </a>
-        )}
-        <a className="button" href={project.repo} target="_blank" rel="noreferrer">
-          <Github size={18} aria-hidden="true" />
-          GitHub
-        </a>
-      </div>
-
-      <div className="project-block">
-        <h4>Funcionalidades reais</h4>
-        <ul>
-          {project.features.map((feature) => (
-            <li key={feature}>{feature}</li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="project-block">
-        <h4>Tecnologias</h4>
-        <div className="tech-list">
-          {project.technologies.map((tech) => (
-            <span key={tech}>{tech}</span>
-          ))}
-        </div>
-      </div>
-
-      <div className="project-block">
-        <h4>O que aprendi/construí</h4>
-        <p>{project.learning}</p>
-      </div>
-
-      {project.note && <p className="project-note">{project.note}</p>}
-    </article>
-  );
-}
+import { projects } from '../data/projects';
+import { useTranslation } from 'react-i18next';
 
 function Projects() {
+  const { t } = useTranslation();
+
   return (
-    <section className="section" id="projetos" aria-labelledby="projects-title">
+    <section className="section" id="projetos">
       <div className="container">
         <div className="section-heading">
-          <p className="eyebrow">Projetos</p>
-          <h2 id="projects-title">Projetos técnicos de estudo e portfólio</h2>
-          <p>
-            Projetos Java/Spring com backend como ponto principal e integração
-            com interfaces web quando isso faz parte do repositório.
-          </p>
+          <p className="eyebrow">{t('projects_eyebrow')}</p>
+          <h2>{t('projects_title')}</h2>
         </div>
+
         <div className="projects-grid">
-          {projects.map((project) => (
-            <ProjectCard key={project.name} project={project} />
-          ))}
+          {projects.map((project, index) => {
+            const isMagic = project.name.includes('Magic');
+            const summaryKey = isMagic ? 'proj_magic_summary' : 'proj_task_summary';
+            const learningKey = isMagic ? 'proj_magic_learning' : 'proj_task_learning';
+
+            return (
+              <motion.article 
+                key={project.name}
+                className="project-card"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div className="project-preview" style={{ position: 'relative' }}>
+                  <img src={project.image} alt={project.imageAlt} loading="lazy" />
+                  {project.featured && (
+                    <div style={{ position: 'absolute', top: 16, right: 16, background: 'var(--accent)', color: '#000', padding: '4px 12px', borderRadius: '999px', fontSize: '0.8rem', fontWeight: 600 }}>
+                      {t('projects_featured')}
+                    </div>
+                  )}
+                </div>
+                
+                <div className="project-content">
+                  <h3>{project.name}</h3>
+                  <p className="project-summary">
+                    {t(summaryKey)}
+                  </p>
+                  
+                  <div className="tech-list">
+                    {project.technologies.slice(0, 5).map(tech => (
+                      <span key={tech}>{tech}</span>
+                    ))}
+                    {project.technologies.length > 5 && <span>+{project.technologies.length - 5}</span>}
+                  </div>
+                  
+                  <div style={{ padding: '16px', background: 'rgba(255,255,255,0.02)', borderRadius: '12px', marginBottom: '24px', fontSize: '0.9rem', color: 'var(--muted)' }}>
+                    <strong style={{ color: 'var(--text)', display: 'block', marginBottom: '8px' }}>
+                      {t('projects_learning')}
+                    </strong>
+                    {t(learningKey)}
+                  </div>
+
+                  <div style={{ display: 'flex', gap: '16px' }}>
+                    <a href={project.repo} target="_blank" rel="noreferrer" className="button" style={{ flex: 1, justifyContent: 'center' }}>
+                      <Github size={18} />
+                      {t('projects_view_code')}
+                    </a>
+                    <a href={project.deploy} target="_blank" rel="noreferrer" className="button primary" style={{ flex: 1, justifyContent: 'center' }}>
+                      <ExternalLink size={18} />
+                      {t('projects_view_live')}
+                    </a>
+                  </div>
+                </div>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>

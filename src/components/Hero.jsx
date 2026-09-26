@@ -1,54 +1,70 @@
-import { FileText, FolderKanban, Github, Linkedin, Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowDown, Github, Terminal } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 function Hero() {
+  const { t } = useTranslation();
+
   return (
-    <section className="hero section" id="top" aria-labelledby="hero-title">
-      <div className="container hero-grid">
-        <div className="hero-content">
-          <p className="eyebrow">Portfólio Backend Java</p>
-          <h1 id="hero-title">Henrique Brandão</h1>
-          <p className="hero-title">Desenvolvedor Backend Java</p>
-          <p className="hero-text">
-            Construindo APIs REST, integrações e aplicações web com Java, Spring
-            Boot, PostgreSQL, Docker e React.
-          </p>
-          <div className="hero-actions" aria-label="Links principais">
-            <a className="button primary" href="https://github.com/henrique-Brandao" target="_blank" rel="noreferrer">
-              <Github size={18} aria-hidden="true" />
-              GitHub
-            </a>
-            <a className="button" href="https://www.linkedin.com/in/brandaohenrique/" target="_blank" rel="noreferrer">
-              <Linkedin size={18} aria-hidden="true" />
-              LinkedIn
-            </a>
-            <a className="button" href="#projetos">
-              <FolderKanban size={18} aria-hidden="true" />
-              Projetos
-            </a>
-            <a className="button" href="/curriculo-henrique-brandao.pdf" target="_blank" rel="noreferrer">
-              <FileText size={18} aria-hidden="true" />
-              Currículo
-            </a>
-            <a className="button" href="mailto:henriquebrandao.dev@gmail.com">
-              <Mail size={18} aria-hidden="true" />
-              Contato
-            </a>
-          </div>
-        </div>
-        <aside className="hero-panel" aria-label="Resumo técnico">
-          <div>
-            <span className="panel-label">Foco atual</span>
-            <strong>Backend Java/Spring Boot</strong>
-          </div>
-          <div>
-            <span className="panel-label">Estudando</span>
-            <strong>Docker, Testes automatizados, CI/CD, Cache e Redis</strong>
-          </div>
-          <div>
-            <span className="panel-label">Objetivo</span>
-            <strong>Estágio ou primeira oportunidade como desenvolvedor</strong>
-          </div>
-        </aside>
+    <section className="section hero" id="top" aria-labelledby="hero-title">
+      <div className="container hero-centered">
+        
+        <motion.div 
+          className="hero-badge"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <span className="pulse-dot" aria-hidden="true"></span>
+          <span>Status: Open to Work</span>
+        </motion.div>
+
+        <motion.h1 
+          className="hero-title-massive"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          id="hero-title"
+        >
+          {t('hero_title_1')} <br /> <span className="text-gradient">{t('hero_title_2')}</span>
+        </motion.h1>
+
+        <motion.p 
+          className="hero-subtitle"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+        >
+          {t('hero_subtitle')}
+        </motion.p>
+
+        <motion.div 
+          className="hero-actions-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+        >
+          <a href="#projetos" className="button primary">
+            <Terminal size={18} aria-hidden="true" />
+            {t('nav_projetos')}
+          </a>
+          <a href="https://github.com/henrique-Brandao" target="_blank" rel="noreferrer" className="button">
+            <Github size={18} aria-hidden="true" />
+            GitHub
+          </a>
+        </motion.div>
+
+        <motion.div
+          style={{ marginTop: '80px', color: 'var(--muted)' }}
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+        >
+          <span style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '2px', display: 'block', marginBottom: '8px' }}>
+            {t('hero_scroll')}
+          </span>
+          <ArrowDown size={20} style={{ margin: '0 auto' }} aria-hidden="true" />
+        </motion.div>
+
       </div>
     </section>
   );

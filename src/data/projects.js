@@ -1,84 +1,70 @@
 export const projects = [
   {
-    name: 'TaskFlow',
+    name: 'MagicFridge AI',
     featured: true,
-    repo: 'https://github.com/henrique-Brandao/taskflow',
-    deploy: 'https://taskflow-henrique.vercel.app/',
-    image: '/imagemDashboard.jpg',
-    imageAlt: 'Placeholder do dashboard do TaskFlow para substituir por uma captura real',
+    repo: 'https://github.com/henrique-Brandao/MagicFridgeAi',
+    deploy: 'https://magicfridge.vercel.app/',
+    image: '/imagemMagicFridge.png',
+    imageAlt: 'Interface do MagicFridge AI',
     summary:
-      'Aplicação full-stack de gerenciamento de tarefas com frontend em React, API REST em Spring Boot, autenticação JWT e persistência em PostgreSQL.',
+      'Uma API REST 100% Serverless para gerenciamento de geladeira que se conecta à API da OpenAI para sugerir receitas baseadas nos ingredientes disponíveis.',
     preview: {
-      title: 'TaskFlow',
-      subtitle: 'Tarefas pessoais por usuário',
-      stats: ['12 tarefas', '7 concluídas', '5 pendentes'],
-      rows: ['Estudar Spring Security', 'Revisar migrations Flyway', 'Ajustar integração React/API']
+      title: 'MagicFridge AI',
+      subtitle: 'Receitas inteligentes (AWS + AI)',
+      stats: ['Python/FastAPI', 'OpenAI', 'DynamoDB'],
+      rows: ['Input: Ingredientes locais', 'Flat Architecture', 'Output: Receita gerada via IA']
     },
     features: [
-      'Cadastro e login de usuários com token JWT assinado com RSA.',
-      'CRUD de tarefas vinculado ao usuário autenticado.',
-      'Contadores de tarefas totais, concluídas e pendentes.',
-      'Validações no backend, migrations com Flyway e documentação Swagger/OpenAPI.',
-      'Tema claro/escuro e modo demo no frontend.'
+      'Integração nativa com a API da OpenAI para geração inteligente de receitas.',
+      'Arquitetura Flat focada no padrão AWS Lambda, mantendo o código simples e focado no domínio.',
+      'Pipeline completo de CI/CD automatizado via GitHub Actions para deploy direto na AWS.',
+      'Banco de dados NoSQL (Amazon DynamoDB) escalável.'
+    ],
+    technologies: [
+      'Python 3.11',
+      'FastAPI',
+      'AWS Lambda',
+      'Serverless Framework',
+      'Amazon DynamoDB',
+      'OpenAI API',
+      'Docker',
+      'GitHub Actions'
+    ],
+    learning:
+      'Este projeto me ensinou a projetar infraestrutura em Cloud do zero, lidando com o ecossistema Serverless (FastAPI + Lambda) e escrevendo pipelines automatizadas de deploy.'
+  },
+  {
+    name: 'TaskFlow',
+    featured: false,
+    repo: 'https://github.com/henrique-Brandao/taskflow',
+    deploy: '#', // TODO: Update com o link real
+    image: '/imagemDashboard.jpg',
+    imageAlt: 'Interface do TaskFlow',
+    summary:
+      'Aplicação full-stack de gerenciamento de tarefas com foco extremo em boas práticas de backend: arquitetura em camadas, autenticação JWT robusta e Docker.',
+    preview: {
+      title: 'TaskFlow',
+      subtitle: 'Gerenciador Pessoal',
+      stats: ['Java 21', 'Spring Boot', 'React 19'],
+      rows: ['JWT (RSA Keys)', 'Migrations via Flyway', 'Multi-stage Docker']
+    },
+    features: [
+      'Separação estrita em camadas (Controller, Service, Repository, DTOs).',
+      'Autenticação stateless com JWT usando criptografia assimétrica (chaves públicas/privadas RSA).',
+      'Controle rigoroso de autorização (usuários só acessam/alteram as próprias tarefas).',
+      'Migrations de banco versionadas com Flyway e validações com Jakarta Validation.',
+      'Dockerfile Multi-stage para otimização de imagem da API.'
     ],
     technologies: [
       'Java 21',
-      'Spring Boot 4',
-      'Spring Web MVC',
-      'Spring Security',
-      'OAuth2 Resource Server',
-      'JWT',
-      'Spring Data JPA',
+      'Spring Boot',
+      'Spring Security (OAuth2)',
       'PostgreSQL',
       'Flyway',
       'React 19',
-      'Vite',
-      'Axios',
       'Docker'
     ],
     learning:
-      'Construí uma API REST em camadas, trabalhei com DTOs, mappers, autenticação stateless, autorização por usuário autenticado, proteção de recursos, tratamento global de exceções, CORS, integração React/API, migrations e primeiros passos com Docker em backend Spring Boot.'
-  },
-  {
-    name: 'MagicFridgeAI',
-    wide: true,
-    repo: 'https://github.com/henrique-Brandao/MagicFridgeAi',
-    status: 'Sem deploy público',
-    image: '/imagemMagicFridge.png',
-    imageAlt: 'Placeholder da interface do MagicFridgeAI para substituir por uma captura real',
-    summary:
-      'Projeto com backend Java/Spring Boot para cadastrar ingredientes e gerar sugestão de receita com a API da OpenAI, acompanhado de um frontend demonstrativo.',
-    preview: {
-      title: 'MagicFridgeAI',
-      subtitle: 'Ingredientes e receita em JSON',
-      stats: ['PostgreSQL', 'OpenAI', 'Docker Compose'],
-      rows: ['Tomate - 3 unidades', 'Arroz - 1 kg', 'Gerar receita']
-    },
-    features: [
-      'Cadastro, listagem, consulta por ID, edição parcial e remoção de ingredientes.',
-      'Geração de receita com base nos ingredientes cadastrados.',
-      'Persistência em PostgreSQL e versionamento de schema com Flyway.',
-      'Validação de entrada com Bean Validation.',
-      'Docker Compose para subir banco, backend e frontend demonstrativo.'
-    ],
-    technologies: [
-      'Java 17',
-      'Spring Boot 3.5.6',
-      'Spring Web',
-      'Spring Data JPA',
-      'Spring WebFlux/WebClient',
-      'Bean Validation',
-      'PostgreSQL',
-      'Flyway',
-      'Maven',
-      'Docker',
-      'Docker Compose',
-      'React 18',
-      'Vite',
-      'TypeScript',
-      'Tailwind CSS'
-    ],
-    learning:
-      'Desenvolvi o backend em camadas, integrei uma API externa com WebClient, modelei DTOs e validações, usei Flyway/PostgreSQL e separei o backend real de um frontend apenas demonstrativo.'
+      'Consolidei conhecimentos profundos de Spring Security e arquitetura de software, entendendo na prática como proteger rotas e otimizar uma API para ambientes containerizados.'
   }
 ];

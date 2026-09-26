@@ -3,24 +3,22 @@ export const skillGroups = [
     title: 'Backend',
     skills: [
       'Java',
+      'Python',
       'Spring Boot',
-      'Spring Security',
-      'APIs REST',
-      'Autenticação JWT',
-      'Arquitetura em camadas',
-      'DTOs e mappers'
+      'FastAPI',
+      'APIs REST'
     ]
   },
   {
-    title: 'Banco de dados',
-    skills: ['PostgreSQL', 'MySQL', 'ORMs', 'Migrations']
+    title: 'Banco de Dados',
+    skills: ['PostgreSQL', 'MySQL', 'DynamoDB']
   },
   {
-    title: 'DevOps e ferramentas',
-    skills: ['Docker', 'Git', 'GitHub', 'Maven', 'Postman', 'Swagger']
+    title: 'Cloud & DevOps',
+    skills: ['AWS', 'Docker', 'Linux', 'Git']
   },
   {
     title: 'Frontend',
-    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Angular em estudo']
+    skills: ['JavaScript', 'React', 'HTML/CSS']
   }
 ];
