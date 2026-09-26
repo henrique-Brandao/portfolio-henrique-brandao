@@ -11,8 +11,8 @@ const contactLinks = [
   },
   {
     label: 'LinkedIn',
-    value: 'in/henrique-brandao',
-    href: 'https://linkedin.com/in/henrique-brandao',
+    value: 'in/brandaohenrique',
+    href: 'https://www.linkedin.com/in/brandaohenrique/',
     icon: Linkedin
   },
   {
